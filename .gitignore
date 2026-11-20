@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+*.mp4
+*.webm
+models/
