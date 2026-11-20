@@ -1,0 +1,22 @@
+# Free trial only. The 512MB Render Free plan may not build or run PyTorch/MMPose.
+# Do NOT change to paid without explicit user approval.
+services:
+  - type: web
+    name: jumplab-mmpose-cmj
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: MMPOSE_DEVICE
+        value: cpu
+      - key: MAX_UPLOAD_BYTES
+        value: '4194304'
+      - key: MAX_DURATION_SEC
+        value: '35'
+      - key: MAX_FRAMES
+        value: '1500'
+      - key: JUMPLAB_ALLOWED_ORIGINS
+        value: https://ai-jump-lab-cmj-sj.vercel.app
